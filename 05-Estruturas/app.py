@@ -1,9 +1,9 @@
 '''
-# Create
-# Read
-# Update
-# Delete
-# List
+# Create      |                        *http://dontpad.com/drivres 
+# Read        |
+# Update      |---> Crud + L
+# Delete      |
+# List        |
 
 
 # Contabilidade

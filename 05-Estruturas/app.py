@@ -10,7 +10,7 @@
 # 5% caso recebam até 2000.00
 # 4% caso recebam até 3000.00
 # 3% caso recebam acima de 3000.00
-# Gerência receberão 800.00
+# Gerência receberão + 800.00
 # Para cada dependente, receberá 200.00
 # Exibir um relatório informando, para cada colaborador, 
 # - o seu nome, 

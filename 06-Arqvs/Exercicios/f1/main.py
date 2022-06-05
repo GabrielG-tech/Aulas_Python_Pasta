@@ -3,8 +3,6 @@
 #
 
 # Define uma estrutura (classe)
-from ast import Set
-
 
 class Corrida: pass
 
@@ -27,10 +25,10 @@ def tratar_dados_do_arquivo(arquivo, tipo):
         dados.append(dados_dic)
     return dados
 
-drivers = tratar_dados_do_arquivo('06-Arqvs\Exercicios\\f1\\00drivers.csv')
-races = tratar_dados_do_arquivo('06-Arqvs\Exercicios\\f1\\02races.csv')
-results = tratar_dados_do_arquivo('06-Arqvs\Exercicios\\f1\\03results.csv')
-'''
+drivers = tratar_dados_do_arquivo('Aulas_Python_Pasta\\06-Arqvs\Exercicios\\f1\\00drivers.csv')
+races = tratar_dados_do_arquivo('Aulas_Python_Pasta\\06-Arqvs\Exercicios\\f1\\02races.csv')
+results = tratar_dados_do_arquivo('Aulas_Python_Pasta\\06-Arqvs\Exercicios\\f1\\03results.csv')
+
 # print(drivers)
 # print(races)
 # print(results)
@@ -43,9 +41,9 @@ def pegar_corridas_de_temporada(ano):
     return corridas_temporada
 
 # print(pegar_corridas_de_temporada(2009))
-'''
 
-'''
+
+
 def pegar_id_do_piloto(nome):
     pilotos = []
     for driver in drivers:
@@ -54,9 +52,9 @@ def pegar_id_do_piloto(nome):
     if (len(pilotos) == 1): return pilotos[0][0]
     # não encontrou um piloto
     # ha mais do que um piloto
-'''
 
-'''
+
+
 def pegar_id_do_piloto(nome, sobrenome):
    for driver in drivers:
        tem_nome = driver['forename'].strip("\"") == nome
@@ -129,4 +127,3 @@ def app():
     # Buscar informações de um circuito pelo seu país
 
 # app()
-'''

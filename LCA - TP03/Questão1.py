@@ -33,4 +33,3 @@ num_pessoas =str(num_pessoas)
 # Exibir resposta com cor no terminal! :)
 print('O valor total da conta, com a taxa de serviço, será de ' + '\033[1mR$' + valor_final + '\033[m.')
 print('Dividindo a conta por ' + '\033[1m' + num_pessoas + ' pessoa(s)\033[m, cada pessoa deverá pagar ' + '\033[1mR$' + valor_dividido + '\033[m.')
-oi

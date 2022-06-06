@@ -24,4 +24,3 @@ if idade > 0:
 
 else:
     print('\033[31mValor inválido\033[m')
-oi

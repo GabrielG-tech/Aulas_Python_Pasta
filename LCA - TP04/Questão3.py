@@ -6,6 +6,7 @@ clear()
 
 nota_vencedor = 0
 vencedor = ''
+# Digitar e ler os nomes dos 5 participantes e suas respectivas notas
 for participante in range(5):
     p = str(input(f'Informe nome do {participante + 1}º participante: '))
     n = float(input(f'Informe nota do {participante + 1}º participante: '))
@@ -17,5 +18,5 @@ for participante in range(5):
     else:
         print('\033[1;31mError\033[m')
         break
-
+# Apresentar apenas o nome e a nota do vencedor... com cor no terminal! :D
 print(f'O(a) vencedor(a) foi \033[1;33m{vencedor}\033[m com nota \033[1;32m{nota_vencedor}\033[m!')

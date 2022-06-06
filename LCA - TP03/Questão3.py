@@ -20,3 +20,4 @@ for participante in range(5):
         break
 # Apresentar apenas o nome e a nota do vencedor... com cor no terminal! :D
 print(f'O(a) vencedor(a) foi \033[1;33m{vencedor}\033[m com nota \033[1;32m{nota_vencedor}\033[m!')
+oi

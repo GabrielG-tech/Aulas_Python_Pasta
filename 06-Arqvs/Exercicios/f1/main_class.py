@@ -3,14 +3,29 @@
 #
 
 # Define uma estrutura (classe)
-from ast import Set
+class Driver:
+    def __init__(self, driverId, forename, surname, nationality):
+        self.driverId = driverId            # 0
+        self.forename = forename            # 4
+        self.surname = surname              # 5
+        self.nationality = nationality      # 7
 
+    def __str__(self):
+        return f"#{self.driverId} {self.forename} {self.surname} ({self.nationality})"
 
-class Corrida: pass
+class Race:
+    def __init__(self, raceId, year, name):
+        self.raceId = raceId
+        self.year = year
+        self.name = name
+    
+    def __str__(self) -> str:
+        return f'#{self.raceId} {self.year} ({self.name})'
 
-class Resultado: pass
+class Result: pass
 
-def tratar_dados_do_arquivo(arquivo, tipo):
+'''
+def tratar_dados_do_arquivo(arquivo):
     file = open(arquivo)
     lista = file.read().splitlines()
     file.close()
@@ -26,10 +41,42 @@ def tratar_dados_do_arquivo(arquivo, tipo):
             # piloto.moto = ""
         dados.append(dados_dic)
     return dados
+'''
 
-drivers = tratar_dados_do_arquivo('06-Arqvs\Exercicios\\f1\\00drivers.csv')
-races = tratar_dados_do_arquivo('06-Arqvs\Exercicios\\f1\\02races.csv')
-results = tratar_dados_do_arquivo('06-Arqvs\Exercicios\\f1\\03results.csv')
+def pegar_conteudo_arquivo(arquivo):
+    file = open('06-Arqvs\Exercicios\\f1\\00drivers.csv')
+    conteudo = file.read().splitlines()
+    file.close()
+    return conteudo
+
+def tratar_dados_dos_races():
+    dados = []
+    for item in pegar_conteudo_arquivo('06-Arqvs\Exercicios\\f1\\00drivers.csv'):
+        race = item.split(',')
+        raceId = driver[0].strip("\"")
+        forename = driver[4].strip("\"")
+        surname = driver[5].strip("\"")
+        nationality = driver[7].strip("\"")
+        dados.append(Driver(driverId, forename, surname, nationality))
+    return dados
+
+def tratar_dados_dos_drivers():
+    dados = []
+    for item in pegar_conteudo_arquivo('06-Arqvs\Exercicios\\f1\\00drivers.csv'):
+        driver = item.split(',')
+        driverId = driver[0].strip("\"")
+        forename = driver[4].strip("\"")
+        surname = driver[5].strip("\"")
+        nationality = driver[7].strip("\"")
+        dados.append(Driver(driverId, forename, surname, nationality))
+    return dados
+
+drivers = tratar_dados_dos_drivers()
+for piloto in drivers:
+    print(piloto)
+
+# races = tratar_dados_do_arquivo('06-Arqvs\Exercicios\\f1\\02races.csv')
+# results = tratar_dados_do_arquivo('06-Arqvs\Exercicios\\f1\\03results.csv')
 '''
 # print(drivers)
 # print(races)

@@ -3,37 +3,12 @@
 #
 
 # Define uma estrutura (classe)
-class Driver:
-    def __init__(self, driverId, forename, surname, nationality):
-        self.driverId = driverId            # 0
-        self.forename = forename            # 4
-        self.surname = surname              # 5
-        self.nationality = nationality      # 7
 
-    def __str__(self):
-        return f"#{self.driverId} {self.forename} {self.surname} ({self.nationality})"
+class Corrida: pass
 
-class Race: 
-    def __init__(self, id, y, n):
-        self.raceId = id
-        self.year = y
-        self.name = n
+class Resultado: pass
 
-    def __str__(self) -> str:
-        return f"#{self.raceId} {self.year} ({self.name})"
-
-class Result:
-    def __init__(self, resultId, raceId, driverId, points):
-        self.resultId = resultId
-        self.raceId = raceId
-        self.driverId = driverId
-        self.points = points
-
-    def __str__(self) -> str:
-        return f"#{self.resultId} {self.raceId} {self.driverId} - {self.points}"
-
-'''
-def tratar_dados_do_arquivo(arquivo):
+def tratar_dados_do_arquivo(arquivo, tipo):
     file = open(arquivo)
     lista = file.read().splitlines()
     file.close()
@@ -49,55 +24,15 @@ def tratar_dados_do_arquivo(arquivo):
             # piloto.moto = ""
         dados.append(dados_dic)
     return dados
-'''
 
-def pegar_conteudo_arquivo(arquivo):
-    file = open(arquivo)
-    conteudo = file.read().splitlines()
-    file.close()
-    return conteudo
+drivers = tratar_dados_do_arquivo('06-Arqvs\Exercicios\\f1\\00drivers.csv')
+races = tratar_dados_do_arquivo('06-Arqvs\Exercicios\\f1\\02races.csv')
+results = tratar_dados_do_arquivo('06-Arqvs\Exercicios\\f1\\03results.csv')
 
-def tratar_dados_dos_races():
-    dados = []
-    for item in pegar_conteudo_arquivo('06-Arqvs\Exercicios\\f1\\02races.csv'):
-        race = item.split(',')
-        corridaId = race[0].strip("\"")
-        ano = race[1].strip("\"")
-        nome = race[4].strip("\"")
-        dados.append(Race(corridaId, ano, nome))
-    return dados
-
-def tratar_dados_dos_drivers():
-    dados = []
-    for item in pegar_conteudo_arquivo('06-Arqvs\Exercicios\\f1\\00drivers.csv'):
-        driver = item.split(',')
-        driverId = driver[0].strip("\"")
-        forename = driver[4].strip("\"")
-        surname = driver[5].strip("\"")
-        nationality = driver[7].strip("\"")
-        dados.append(Driver(driverId, forename, surname, nationality))
-    return dados
-
-def tratar_dados_dos_results():
-    dados = []
-    for item in pegar_conteudo_arquivo('06-Arqvs\Exercicios\\f1\\03results.csv'):
-        result = item.split(',')
-        resultId = result[0].strip("\"")
-        raceId = result[1].strip("\"")
-        driverId = result[2].strip("\"")
-        points = result[9].strip("\"")
-        dados.append(Result(resultId, raceId, driverId, points))
-    return dados
-
-drivers = tratar_dados_dos_drivers()
-races = tratar_dados_dos_races()
-result = tratar_dados_dos_results()
-for resultado in result:
-    print(resultado)
-
-'''# print(races)
+print(drivers)
+# print(races)
 # print(results)
-
+'''
 def pegar_corridas_de_temporada(ano):
     corridas_temporada = []
     for race in races:
@@ -106,9 +41,9 @@ def pegar_corridas_de_temporada(ano):
     return corridas_temporada
 
 # print(pegar_corridas_de_temporada(2009))
-'''
 
-'''
+
+
 def pegar_id_do_piloto(nome):
     pilotos = []
     for driver in drivers:
@@ -117,9 +52,9 @@ def pegar_id_do_piloto(nome):
     if (len(pilotos) == 1): return pilotos[0][0]
     # não encontrou um piloto
     # ha mais do que um piloto
-'''
 
-'''
+
+
 def pegar_id_do_piloto(nome, sobrenome):
    for driver in drivers:
        tem_nome = driver['forename'].strip("\"") == nome

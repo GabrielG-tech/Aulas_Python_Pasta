@@ -3,6 +3,8 @@ import pandas as pd
 # print(pd.__version__)
 
 drivers_df = pd.read_csv('07-Pandas\\00drivers.csv') #, index_col=0)
+results_df = pd.read_csv('07-Pandas\\03results.csv')
+races_df = pd.read_csv('07-Pandas\\02races.csv')
 
 # print(drivers_df)
 # print(drivers_df.head(10))
@@ -16,5 +18,7 @@ drivers_df = pd.read_csv('07-Pandas\\00drivers.csv') #, index_col=0)
 # print(drivers_df[10:20])
 
 #  print(drivers_df.iloc[0, :])
-
 # print(drivers_df.loc[drivers_df['driverId']])
+
+drivers_results_df = results_df.merge(drivers_df, indicator=True)
+print(drivers_results_df[['year', 'forname', 'name', 'surname', 'points', '_merge']])

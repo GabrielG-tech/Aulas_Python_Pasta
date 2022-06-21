@@ -11,3 +11,17 @@ CREATE TABLE IF NOT EXISTS pessoas
 
 conn.execute(com_criar_tabela_pessoa)
 conn.commit()
+
+# Inserir dados com SQL
+com_inserir_dados = '''
+INSET INTO pessoas VALUES ('fulano', 'de tal', 90)
+'''
+
+# conn.execute(com_inserir_dados)
+# conn.commit()
+
+cursor = conn.cursor()
+for pessoa in cursor.execute("SELECT * FROM pessoas"):
+    print(pessoa)
+
+conn.close()

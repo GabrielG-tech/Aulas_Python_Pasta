@@ -4,12 +4,18 @@ import requests
 api_url = "https://code-battle-lac.herokuapp.com"
 
 # post /signin
-res = requests.post(api_url + "/signin", json = {
+user = requests.post(api_url + "/signin", json = {
     "email": "gabriel.gsouza@al.infnet.edu.br",
-    "password": "gabriel.gsouza"
+    "password": "987654321"
 })
 
-# post /update_pass
-# res = requests.post(api_url + "/update_pass")
+user = user.json()
+user_token = user['token']
+headers = {
+    'Authorization': f'Bearer {user_token}'
+}
 
-print(res)
+field = 'LCA22T2M1'
+game = requests.get(api_url + "/games/" + field + 'add/me', headers=headers)
+#game = requests.post(api_url + "/games", headers=headers, json = {'field': field})
+print(game.json())

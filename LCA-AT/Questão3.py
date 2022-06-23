@@ -3,12 +3,28 @@
 # faça um diagnóstico da saúde financeira do usuário, com base nos valores percentuais acima expostos,
 # informando qual é o percentual da renda mensal total comprometido por cada custo. 
 
+renda_mensal_total = float(input('Renda mensal total: '))
+gasto_moradia = float(input('Gasto com moradia: '))
+gastos_totais_educacao = float(input('Gasto com educação: '))
+gastos_totais_transporte = float(input('Gasto com transporte: '))
+
 # Se o gasto estiver dentro do percentual recomendado, informe ainda que:
 # "Seus gastos estão dentro da margem recomendada."
 
 # Caso contrário, informe:
 # "Portanto, idealmente, o máximo de sua renda comprometida com {tipo} deveria ser de R$ {valor_max}"
-  
+valor_max_moradia = renda_mensal_total * 0.3
+valor_max_educacao = renda_mensal_total * 0.2
+valor_max_transporte = renda_mensal_total * 0.15
+
+print('valor_max_moradia = {}, valor_max_educacao = {}, valor_max_transporte = {}'.format(valor_max_moradia, valor_max_educacao, valor_max_transporte))
+
+
+#def diagnostico_financeira_usuario():
+#    if gasto_moradia/renda_mensal_total <= 0.3 and gastos_totais_educacao/renda_mensal_total <= 0.2 and gastos_totais_transporte/renda_mensal_total <= 0.15:
+#        print("Seus gastos estão dentro da margem recomendada.")
+#    elif :
+#        print(f"Portanto, idealmente, o máximo de sua renda comprometida com {tipo} deveria ser de R$ {valor_max}")
 
 # Onde "tipo" deve ser moradia, educação ou transportes e "valor_max"
 # deve ser o valor equivalente ao percentual máximo de gasto com esse tipo de custo.

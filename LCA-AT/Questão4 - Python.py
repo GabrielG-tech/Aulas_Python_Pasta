@@ -17,7 +17,7 @@ def calcular_juros_compostos(valor_inicial, quant_aporte, juros_mensais, periodo
         valor_total += quant_aporte 
         valor_total_grafico.append(round(valor_total))
         valor_total_periodo.append(item)
-        print(f'Após {item} períodos(s), o montante será de R${round(valor_total, 2)}.')
+        print(f'Após {item + 1} períodos(s), o montante será de R${round(valor_total, 2)}.')
     plt.plot(valor_total_periodo, valor_total_grafico)
     plt.show()
 
